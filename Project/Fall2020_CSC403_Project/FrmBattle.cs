@@ -17,14 +17,24 @@ namespace Fall2020_CSC403_Project {
     }
 
     public void Setup() {
+            
       // update for this enemy
       picEnemy.BackgroundImage = enemy.Img;
       picEnemy.Refresh();
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
-
-      // Observer pattern
-      enemy.AttackEvent += PlayerDamage;
+            string val = BackColor.Name.ToString();
+      if (val == "Green")
+      {
+         AdVisible(val);
+      }
+      else if (val == "Orange")
+      {
+          AdVisible(val);
+      }
+      
+            // Observer pattern
+            enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
 
       // show health
@@ -40,6 +50,11 @@ namespace Fall2020_CSC403_Project {
       simpleSound.Play();
 
       tmrFinalBattle.Enabled = true;
+      string val = BackColor.Name.ToString();
+      if (val == "Red")
+      {
+          AdVisible(val);
+      }
     }
 
     public static FrmBattle GetInstance(Enemy enemy) {
@@ -88,5 +103,37 @@ namespace Fall2020_CSC403_Project {
       picBossBattle.Visible = false;
       tmrFinalBattle.Enabled = false;
     }
-  }
+
+    private void advertisingPanel_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+       
+        private void AdVisible(string color)
+        {
+            if (color == "Green")
+            {
+                advertisingPanel.BackgroundImage = Resources.AD1;
+            }
+            else if (color == "Orange")
+            {
+                advertisingPanel.BackgroundImage = Resources.AD2;
+            }
+            else if (color == "Red")
+            {
+                advertisingPanel.BackgroundImage = Resources.AD3;
+            }
+           
+            advertisingPanel.Visible = true;
+            advertisingPanel.Enabled = true;
+        }
+
+        private void AdClose_Click(object sender, EventArgs e)
+        {
+            advertisingPanel.Visible = false;
+            advertisingPanel.Enabled = false;
+
+        }
+    }
 }

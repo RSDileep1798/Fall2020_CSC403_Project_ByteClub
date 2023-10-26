@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project {
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
-      enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      enemyCheeto.Color = Color.Orange;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
