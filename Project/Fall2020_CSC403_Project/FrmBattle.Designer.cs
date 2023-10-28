@@ -31,11 +31,11 @@
             this.lblEnemyHealthFull = new System.Windows.Forms.Label();
             this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
             this.advertisingPanel = new System.Windows.Forms.Panel();
-            this.RedirectLink = new System.Windows.Forms.LinkLabel();
             this.AdClose = new System.Windows.Forms.TextBox();
             this.picBossBattle = new System.Windows.Forms.PictureBox();
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.advertisingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
@@ -101,28 +101,19 @@
             this.advertisingPanel.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.advertisingPanel.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.AD1;
             this.advertisingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.advertisingPanel.Controls.Add(this.RedirectLink);
             this.advertisingPanel.Controls.Add(this.AdClose);
+            this.advertisingPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.advertisingPanel.Enabled = false;
             this.advertisingPanel.Location = new System.Drawing.Point(52, 52);
             this.advertisingPanel.Name = "advertisingPanel";
             this.advertisingPanel.Size = new System.Drawing.Size(720, 458);
             this.advertisingPanel.TabIndex = 8;
             this.advertisingPanel.Visible = false;
-            // 
-            // RedirectLink
-            // 
-            this.RedirectLink.AutoSize = true;
-            this.RedirectLink.Location = new System.Drawing.Point(301, 200);
-            this.RedirectLink.Name = "RedirectLink";
-            this.RedirectLink.Size = new System.Drawing.Size(55, 13);
-            this.RedirectLink.TabIndex = 1;
-            this.RedirectLink.TabStop = true;
-            this.RedirectLink.Text = "linkLabel1";
-            this.RedirectLink.Visible = false;
+            this.advertisingPanel.Click += new System.EventHandler(this.advertisingPanel_Click);
             // 
             // AdClose
             // 
+            this.AdClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AdClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.AdClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdClose.ForeColor = System.Drawing.Color.Red;
@@ -169,6 +160,11 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +207,6 @@
     private System.Windows.Forms.Timer tmrFinalBattle;
         private System.Windows.Forms.Panel advertisingPanel;
         private System.Windows.Forms.TextBox AdClose;
-        private System.Windows.Forms.LinkLabel RedirectLink;
+        private System.Windows.Forms.Timer timer1;
     }
 }
