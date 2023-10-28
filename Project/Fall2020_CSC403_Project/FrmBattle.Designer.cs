@@ -24,6 +24,7 @@
     /// </summary>
     private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBattle));
             this.btnAttack = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,7 +100,7 @@
             // advertisingPanel
             // 
             this.advertisingPanel.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.advertisingPanel.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.AD1;
+            this.advertisingPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("advertisingPanel.BackgroundImage")));
             this.advertisingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.advertisingPanel.Controls.Add(this.AdClose);
             this.advertisingPanel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -119,7 +120,7 @@
             this.AdClose.ForeColor = System.Drawing.Color.Red;
             this.AdClose.Location = new System.Drawing.Point(695, 0);
             this.AdClose.Name = "AdClose";
-            this.AdClose.Size = new System.Drawing.Size(25, 38);
+            this.AdClose.Size = new System.Drawing.Size(25, 42);
             this.AdClose.TabIndex = 0;
             this.AdClose.Text = "X";
             this.AdClose.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -127,7 +128,7 @@
             // 
             // picBossBattle
             // 
-            this.picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
+            this.picBossBattle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBossBattle.BackgroundImage")));
             this.picBossBattle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBossBattle.Location = new System.Drawing.Point(780, 563);
             this.picBossBattle.Name = "picBossBattle";
@@ -139,7 +140,7 @@
             // picEnemy
             // 
             this.picEnemy.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picEnemy.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_koolaid;
+            this.picEnemy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picEnemy.BackgroundImage")));
             this.picEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picEnemy.Location = new System.Drawing.Point(515, 98);
@@ -151,7 +152,7 @@
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
+            this.picPlayer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPlayer.BackgroundImage")));
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picPlayer.Location = new System.Drawing.Point(70, 98);

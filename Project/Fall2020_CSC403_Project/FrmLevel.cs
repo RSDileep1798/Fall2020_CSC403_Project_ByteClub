@@ -73,15 +73,18 @@ namespace Fall2020_CSC403_Project {
       if (HitAWall(player)) {
         player.MoveBack();
       }
+      if(enemyPoisonPacket.Health <=0) { disableenemy(enemyPoisonPacket); }
+            if (enemyCheeto.Health <= 0) { disableenemy(enemyCheeto); }
+            if (bossKoolaid.Health <= 0) { disableenemy(bossKoolaid); }
 
       // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
+      if (HitAChar(player, enemyPoisonPacket) && enemyPoisonPacket.Health > 0) {
         Fight(enemyPoisonPacket);
       }
-      else if (HitAChar(player, enemyCheeto)) {
+      else if (HitAChar(player, enemyCheeto) && enemyCheeto.Health > 0) {
         Fight(enemyCheeto);
       }
-      if (HitAChar(player, bossKoolaid)) {
+      if (HitAChar(player, bossKoolaid) && bossKoolaid.Health > 0) {
         Fight(bossKoolaid);
       }
 
@@ -89,7 +92,28 @@ namespace Fall2020_CSC403_Project {
       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
-    private bool HitAWall(Character c) {
+        private void disableenemy(Enemy enemy)
+        {
+            if (enemy == bossKoolaid)
+            {
+                picBossKoolAid.Enabled = false;
+                picBossKoolAid.Visible = false;
+            }
+            if (enemy == enemyCheeto)
+            {
+                picEnemyCheeto.Enabled = false;
+                picEnemyCheeto.Visible = false;
+            }
+            if (enemy == enemyPoisonPacket)
+            {
+                picEnemyPoisonPacket.Enabled = false;
+                picEnemyPoisonPacket.Visible = false;
+            }
+
+
+        }
+
+        private bool HitAWall(Character c) {
       bool hitAWall = false;
       for (int w = 0; w < walls.Length; w++) {
         if (c.Collider.Intersects(walls[w].Collider)) {
@@ -106,7 +130,6 @@ namespace Fall2020_CSC403_Project {
 
         private void Fight(Enemy enemy)
         {
-            bool bosskoolaid = false;
 
             player.ResetMoveSpeed();
             player.MoveBack();
@@ -115,8 +138,8 @@ namespace Fall2020_CSC403_Project {
             {
                 frmBattle.Show();
             }
-            
-            if (bosskoolaid)
+
+            if (enemy == bossKoolaid)
             {
                 frmBattle.SetupForBossBattle();
             }

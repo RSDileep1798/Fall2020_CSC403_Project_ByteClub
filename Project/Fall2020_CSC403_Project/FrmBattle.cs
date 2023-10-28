@@ -27,7 +27,7 @@ namespace Fall2020_CSC403_Project {
       picEnemy.Refresh();
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
-            string val = BackColor.Name.ToString();
+      string val = BackColor.Name.ToString();
       if (val == "Green")
       {
          AdVisible(val);
