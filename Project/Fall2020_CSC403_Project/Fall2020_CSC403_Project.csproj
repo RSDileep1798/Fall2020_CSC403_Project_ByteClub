@@ -133,11 +133,13 @@
     <None Include="data\AD4.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="control_menu_image.jpg" />
     <Content Include="data\char1.png" />
     <Content Include="data\char1ic.png" />
     <Content Include="data\char2.png" />
     <Content Include="data\char2ic.png" />
     <Content Include="data\cloth.png" />
+    <Content Include="data\control_menu_image.jpg" />
     <Content Include="data\playeric.png" />
     <None Include="Resources\cloth.png" />
   </ItemGroup>

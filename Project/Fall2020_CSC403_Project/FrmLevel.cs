@@ -16,8 +16,9 @@ namespace Fall2020_CSC403_Project {
         private int charchoice = 0;
         private DateTime timeBegin;
     private FrmBattle frmBattle;
+        private bool pause = true;
 
-    public FrmLevel() {
+        public FrmLevel() {
       InitializeComponent();
     }
 
@@ -164,12 +165,33 @@ namespace Fall2020_CSC403_Project {
           player.GoDown();
           break;
 
-        default:
+                //main menu
+                case Keys.C:
+                    pause = true;
+                    Control_menu();
+                    break;
+
+                default:
           player.ResetMoveSpeed();
           break;
       }
     }
+        //main menu
+        private void Control_menu()
+        {
 
+            if (my_game_control_menu.Visible == false)
+            {
+                my_game_control_menu.Enabled = true;
+                my_game_control_menu.Visible = true;
+            }
+            else
+            {
+                my_game_control_menu.Enabled = false;
+                my_game_control_menu.Visible = false;
+
+            }
+        }
         private void ninja_Click(object sender, EventArgs e)
         {
             this.picPlayer.BackgroundImage = Properties.Resources.char2;
@@ -201,6 +223,25 @@ namespace Fall2020_CSC403_Project {
             {
                 flowLayPan.Visible = false;
                 flowLayPan.Enabled = false;
+            }
+        }
+        //Control menu
+        //menu
+        private void on_click_control_menu(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            Point control_menu_image_coordinates = me.Location;
+            if (120 < control_menu_image_coordinates.X && control_menu_image_coordinates.X < 290
+                && 240 < control_menu_image_coordinates.Y && control_menu_image_coordinates.Y < 290)
+            {
+                pause = false;
+                Control_menu();
+            }
+            else if (120 < control_menu_image_coordinates.X && control_menu_image_coordinates.X < 295 &&
+                290 < control_menu_image_coordinates.Y && control_menu_image_coordinates.Y < 340)
+            {
+
+                this.Close();
             }
         }
 
