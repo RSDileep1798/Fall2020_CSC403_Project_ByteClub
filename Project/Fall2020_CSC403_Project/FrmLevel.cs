@@ -13,7 +13,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyCheeto;
     private Character[] walls;
 
-        private int charactorchoice = 0;
+        private int charchoice = 0;
         private DateTime timeBegin;
     private FrmBattle frmBattle;
 
@@ -135,7 +135,7 @@ namespace Fall2020_CSC403_Project {
 
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy, charactorchoice);
+            frmBattle = FrmBattle.GetInstance(enemy, charchoice);
             if(frmBattle != null)
             {
                 frmBattle.Show();
@@ -169,28 +169,18 @@ namespace Fall2020_CSC403_Project {
           break;
       }
     }
-        private void characterfit()
-        {
-            if (charactorchoice==0)
-            {
-               
-            }
-            else if (charactorchoice == 2)
-            {
-                
-            }
-        }
+
         private void ninja_Click(object sender, EventArgs e)
         {
             this.picPlayer.BackgroundImage = Properties.Resources.char2;
-            charactorchoice = 2;
+            charchoice = 2;
 
         }
 
         private void wizard_Click(object sender, EventArgs e)
         {
             this.picPlayer.BackgroundImage = Properties.Resources.char1;
-            charactorchoice = 1;
+            charchoice = 1;
 
         }
 
@@ -198,19 +188,19 @@ namespace Fall2020_CSC403_Project {
         {
 
             this.picPlayer.BackgroundImage = Properties.Resources.player;
-            charactorchoice = 0;
+            charchoice = 0;
         }
         private void character_Click(object sender, EventArgs e)
         {
-            if (flowLayoutPanel1.Visible != true)
+            if (flowLayPan.Visible != true)
             {
-                flowLayoutPanel1.Visible = true;
-                flowLayoutPanel1.Enabled = true;
+                flowLayPan.Visible = true;
+                flowLayPan.Enabled = true;
             }
             else
             {
-                flowLayoutPanel1.Visible = false;
-                flowLayoutPanel1.Enabled = false;
+                flowLayPan.Visible = false;
+                flowLayPan.Enabled = false;
             }
         }
 

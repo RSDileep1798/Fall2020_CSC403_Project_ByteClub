@@ -28,7 +28,7 @@
       this.lblInGameTime = new System.Windows.Forms.Label();
       this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
       this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
-      this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+      this.flowLayPan = new System.Windows.Forms.FlowLayoutPanel();
       this.wizardicon = new System.Windows.Forms.PictureBox();
       this.playericon = new System.Windows.Forms.PictureBox();
       this.ninjaicon = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
       this.picWall1 = new System.Windows.Forms.PictureBox();
       this.picWall2 = new System.Windows.Forms.PictureBox();
       this.picWall11 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayPan.SuspendLayout();
 
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
@@ -95,20 +95,20 @@
       this.tmrUpdateInGameTime.Enabled = true;
       this.tmrUpdateInGameTime.Tick += new System.EventHandler(this.tmrUpdateInGameTime_Tick);
       // 
-       // flowLayoutPanel1
+       // flowLayPan
        // 
-       this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-      this.flowLayoutPanel1.Controls.Add(this.wizardicon);
-       this.flowLayoutPanel1.Controls.Add(this.playericon);
-       this.flowLayoutPanel1.Controls.Add(this.ninjaicon);
-       this.flowLayoutPanel1.Enabled = false;
-       this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-       this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 65);
-       this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-       this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-       this.flowLayoutPanel1.Size = new System.Drawing.Size(82, 211);
-       this.flowLayoutPanel1.TabIndex = 19;
-       this.flowLayoutPanel1.Visible = false;
+       this.flowLayPan.BackColor = System.Drawing.Color.Transparent;
+      this.flowLayPan.Controls.Add(this.wizardicon);
+       this.flowLayPan.Controls.Add(this.playericon);
+       this.flowLayPan.Controls.Add(this.ninjaicon);
+       this.flowLayPan.Enabled = false;
+       this.flowLayPan.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+       this.flowLayPan.Location = new System.Drawing.Point(2, 65);
+       this.flowLayPan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+       this.flowLayPan.Name = "flowLayPan";
+       this.flowLayPan.Size = new System.Drawing.Size(82, 211);
+       this.flowLayPan.TabIndex = 19;
+       this.flowLayPan.Visible = false;
        // 
        // wizardicon
        // 
@@ -367,7 +367,7 @@
       this.Controls.Add(this.picWall8);
       this.Controls.Add(this.picWall7);
       this.Controls.Add(this.lblInGameTime);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayPan);
             this.Controls.Add(this.charactericon);
       this.Controls.Add(this.picWall1);
       this.Controls.Add(this.picWall0);
@@ -389,7 +389,7 @@
       this.Load += new System.EventHandler(this.FrmLevel_Load);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayPan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
@@ -439,7 +439,7 @@
         private System.Windows.Forms.PictureBox ninjaicon;
         private System.Windows.Forms.PictureBox playericon;
         private System.Windows.Forms.PictureBox wizardicon;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayPan;
 
     }
 }

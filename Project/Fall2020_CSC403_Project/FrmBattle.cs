@@ -29,7 +29,7 @@ namespace Fall2020_CSC403_Project {
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
       //To display the character choosen from skin on the battle screeen
-      getplayer();
+      getThePlayer();
       string val = BackColor.Name.ToString();
       if (val == "Green")
       {
@@ -48,7 +48,7 @@ namespace Fall2020_CSC403_Project {
       UpdateHealthBars();
     }
         //To get the player from the skins
-        private void getplayer()
+        private void getThePlayer()
         {
             switch (characterbattle)
             {
@@ -77,8 +77,8 @@ namespace Fall2020_CSC403_Project {
       
     }
 
-        public static FrmBattle GetInstance(Enemy enemy, int charactorchoice) { 
-            characterbattle = charactorchoice;
+        public static FrmBattle GetInstance(Enemy enemy, int charchoice) { 
+            characterbattle = charchoice;
             if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
@@ -99,24 +99,15 @@ namespace Fall2020_CSC403_Project {
       lblEnemyHealthFull.Text = enemy.Health.ToString();
     }
 
-    private void btnAttack_Click(object sender, EventArgs e) {
-            if (characterbattle == 3 || characterbattle == 5)
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            player.OnAttack(-4);
+            if (enemy.Health > 0)
             {
-                player.OnAttack(-4);
+                enemy.OnAttack(-2);
             }
-            else if (characterbattle == 4 || characterbattle == 6)
-            {
-                player.OnAttack(-8);
-            }
-            else
-            {
-                player.OnAttack(-2);
 
-            }
-            //player.OnAttack(-4);
-      if (enemy.Health > 0) {
-        enemy.OnAttack(-2);
-      }
+
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
