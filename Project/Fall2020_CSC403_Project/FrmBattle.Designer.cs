@@ -120,7 +120,7 @@
             this.AdClose.ForeColor = System.Drawing.Color.Red;
             this.AdClose.Location = new System.Drawing.Point(695, 0);
             this.AdClose.Name = "AdClose";
-            this.AdClose.Size = new System.Drawing.Size(25, 42);
+            this.AdClose.Size = new System.Drawing.Size(25, 38);
             this.AdClose.TabIndex = 0;
             this.AdClose.Text = "X";
             this.AdClose.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

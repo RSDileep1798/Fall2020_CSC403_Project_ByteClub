@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
@@ -132,6 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\AD4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\char1.png" />
+    <Content Include="data\char1ic.png" />
+    <Content Include="data\char2.png" />
+    <Content Include="data\char2ic.png" />
+    <Content Include="data\cloth.png" />
+    <Content Include="data\playeric.png" />
+    <None Include="Resources\cloth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

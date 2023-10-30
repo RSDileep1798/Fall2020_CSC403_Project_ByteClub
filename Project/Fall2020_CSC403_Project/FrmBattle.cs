@@ -11,7 +11,8 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
-    private List<string> texts = new List<string> { "5", "4", "3", "2", "X" };
+        private static int characterbattle;
+        private List<string> texts = new List<string> { "5", "4", "3", "2", "X" };
     private int currentIndex = 0;
     private bool ad3start = false;
     string urlToOpen = "";
@@ -27,6 +28,8 @@ namespace Fall2020_CSC403_Project {
       picEnemy.Refresh();
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
+      //To display the character choosen from skin on the battle screeen
+      getplayer();
       string val = BackColor.Name.ToString();
       if (val == "Green")
       {
@@ -44,8 +47,25 @@ namespace Fall2020_CSC403_Project {
       // show health
       UpdateHealthBars();
     }
+        //To get the player from the skins
+        private void getplayer()
+        {
+            switch (characterbattle)
+            {
+                case 1:
+                    picPlayer.BackgroundImage = Properties.Resources.char1;
+                    break;
+                case 2:
+                    picPlayer.BackgroundImage = Properties.Resources.char2;
+                    break;
+                case 0:
+                    picPlayer.BackgroundImage = Properties.Resources.player;
 
-    public void SetupForBossBattle() {
+                    break;
+            }
+        }
+
+      public void SetupForBossBattle() {
       picBossBattle.Location = Point.Empty;
       picBossBattle.Size = ClientSize;
       picBossBattle.Visible = true;
@@ -57,8 +77,9 @@ namespace Fall2020_CSC403_Project {
       
     }
 
-    public static FrmBattle GetInstance(Enemy enemy) {
-      if (instance == null) {
+        public static FrmBattle GetInstance(Enemy enemy, int charactorchoice) { 
+            characterbattle = charactorchoice;
+            if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
         instance.Setup();
@@ -79,7 +100,20 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
+            if (characterbattle == 3 || characterbattle == 5)
+            {
+                player.OnAttack(-4);
+            }
+            else if (characterbattle == 4 || characterbattle == 6)
+            {
+                player.OnAttack(-8);
+            }
+            else
+            {
+                player.OnAttack(-2);
+
+            }
+            //player.OnAttack(-4);
       if (enemy.Health > 0) {
         enemy.OnAttack(-2);
       }

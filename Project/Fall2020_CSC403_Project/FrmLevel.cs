@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,7 +13,8 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyCheeto;
     private Character[] walls;
 
-    private DateTime timeBegin;
+        private int charactorchoice = 0;
+        private DateTime timeBegin;
     private FrmBattle frmBattle;
 
     public FrmLevel() {
@@ -133,7 +135,7 @@ namespace Fall2020_CSC403_Project {
 
             player.ResetMoveSpeed();
             player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
+            frmBattle = FrmBattle.GetInstance(enemy, charactorchoice);
             if(frmBattle != null)
             {
                 frmBattle.Show();
@@ -167,8 +169,52 @@ namespace Fall2020_CSC403_Project {
           break;
       }
     }
+        private void characterfit()
+        {
+            if (charactorchoice==0)
+            {
+               
+            }
+            else if (charactorchoice == 2)
+            {
+                
+            }
+        }
+        private void ninja_Click(object sender, EventArgs e)
+        {
+            this.picPlayer.BackgroundImage = Properties.Resources.char2;
+            charactorchoice = 2;
 
-    private void lblInGameTime_Click(object sender, EventArgs e) {
+        }
+
+        private void wizard_Click(object sender, EventArgs e)
+        {
+            this.picPlayer.BackgroundImage = Properties.Resources.char1;
+            charactorchoice = 1;
+
+        }
+
+        private void player_Click(object sender, EventArgs e)
+        {
+
+            this.picPlayer.BackgroundImage = Properties.Resources.player;
+            charactorchoice = 0;
+        }
+        private void character_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel1.Visible != true)
+            {
+                flowLayoutPanel1.Visible = true;
+                flowLayoutPanel1.Enabled = true;
+            }
+            else
+            {
+                flowLayoutPanel1.Visible = false;
+                flowLayoutPanel1.Enabled = false;
+            }
+        }
+
+        private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
   }

@@ -28,9 +28,18 @@
       this.lblInGameTime = new System.Windows.Forms.Label();
       this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
       this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
-      this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
+      this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+      this.wizardicon = new System.Windows.Forms.PictureBox();
+      this.playericon = new System.Windows.Forms.PictureBox();
+      this.ninjaicon = new System.Windows.Forms.PictureBox();
+      //this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
+      this.picPlayer = new System.Windows.Forms.PictureBox();
+
+            this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
       this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
-      this.picWall3 = new System.Windows.Forms.PictureBox();
+            this.charactericon = new System.Windows.Forms.PictureBox();
+
+            this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
       this.picWall5 = new System.Windows.Forms.PictureBox();
@@ -45,7 +54,9 @@
       this.picWall1 = new System.Windows.Forms.PictureBox();
       this.picWall2 = new System.Windows.Forms.PictureBox();
       this.picWall11 = new System.Windows.Forms.PictureBox();
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
@@ -62,7 +73,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
-      this.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.charactericon)).BeginInit();
+
+            this.SuspendLayout();
       // 
       // lblInGameTime
       // 
@@ -81,6 +94,60 @@
       // 
       this.tmrUpdateInGameTime.Enabled = true;
       this.tmrUpdateInGameTime.Tick += new System.EventHandler(this.tmrUpdateInGameTime_Tick);
+      // 
+       // flowLayoutPanel1
+       // 
+       this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+      this.flowLayoutPanel1.Controls.Add(this.wizardicon);
+       this.flowLayoutPanel1.Controls.Add(this.playericon);
+       this.flowLayoutPanel1.Controls.Add(this.ninjaicon);
+       this.flowLayoutPanel1.Enabled = false;
+       this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+       this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 65);
+       this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+       this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+       this.flowLayoutPanel1.Size = new System.Drawing.Size(82, 211);
+       this.flowLayoutPanel1.TabIndex = 19;
+       this.flowLayoutPanel1.Visible = false;
+       // 
+       // wizardicon
+       // 
+       this.wizardicon.BackColor = System.Drawing.Color.Transparent;
+       this.wizardicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char1ic;
+       this.wizardicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+       this.wizardicon.Location = new System.Drawing.Point(2, 2);
+       this.wizardicon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+       this.wizardicon.Name = "wizardicon";
+       this.wizardicon.Size = new System.Drawing.Size(73, 68);
+       this.wizardicon.TabIndex = 4;
+       this.wizardicon.TabStop = false;
+       this.wizardicon.Click += new System.EventHandler(this.wizard_Click);
+       // 
+       // playericon
+       // 
+       this.playericon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.playeric;
+       this.playericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+       this.playericon.Location = new System.Drawing.Point(2, 74);
+       this.playericon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+       this.playericon.Name = "playericon";
+       this.playericon.Size = new System.Drawing.Size(73, 66);
+       this.playericon.TabIndex = 5;
+       this.playericon.TabStop = false;
+       this.playericon.Click += new System.EventHandler(this.player_Click);
+      // 
+      // ninjaicon
+      // 
+      this.ninjaicon.BackColor = System.Drawing.Color.Transparent;
+      this.ninjaicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char2ic;
+      this.ninjaicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.ninjaicon.Dock = System.Windows.Forms.DockStyle.Top;
+      this.ninjaicon.Location = new System.Drawing.Point(2, 144);
+      this.ninjaicon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.ninjaicon.Name = "ninjaicon";
+      this.ninjaicon.Size = new System.Drawing.Size(73, 53);
+      this.ninjaicon.TabIndex = 0;
+      this.ninjaicon.TabStop = false;
+      this.ninjaicon.Click += new System.EventHandler(this.ninja_Click);
       // 
       // tmrPlayerMove
       // 
@@ -142,6 +209,19 @@
       this.picPlayer.Size = new System.Drawing.Size(54, 106);
       this.picPlayer.TabIndex = 0;
       this.picPlayer.TabStop = false;
+      // 
+      // charactericon
+      // 
+      this.charactericon.BackColor = System.Drawing.Color.Transparent;
+      this.charactericon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.cloth;
+      this.charactericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.charactericon.Location = new System.Drawing.Point(2, 1);
+      this.charactericon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.charactericon.Name = "charactericon";
+      this.charactericon.Size = new System.Drawing.Size(82, 67);
+      this.charactericon.TabIndex = 18;
+      this.charactericon.TabStop = false;
+      this.charactericon.Click += new System.EventHandler(this.character_Click);
       // 
       // picWall5
       // 
@@ -287,6 +367,8 @@
       this.Controls.Add(this.picWall8);
       this.Controls.Add(this.picWall7);
       this.Controls.Add(this.lblInGameTime);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.charactericon);
       this.Controls.Add(this.picWall1);
       this.Controls.Add(this.picWall0);
       this.Controls.Add(this.picWall10);
@@ -307,11 +389,13 @@
       this.Load += new System.EventHandler(this.FrmLevel_Load);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charactericon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
@@ -351,6 +435,12 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-  }
+        private System.Windows.Forms.PictureBox charactericon;
+        private System.Windows.Forms.PictureBox ninjaicon;
+        private System.Windows.Forms.PictureBox playericon;
+        private System.Windows.Forms.PictureBox wizardicon;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+
+    }
 }
 
