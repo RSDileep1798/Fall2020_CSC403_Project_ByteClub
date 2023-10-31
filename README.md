@@ -5,7 +5,7 @@ The ByteClub game development team has two primary goals for the player: one is 
 The features team began concentrating on the fundamental characteristics needed for interaction and increased the level of effort.
 
  BYTE CLUB
- 👦🏻Dileep 🧔🏽‍♂️Shakhar 👩🏽Thapaswi Kishor 👨🏽‍🦱Anishkatuwal
+ 👦🏻Dileep 🧔🏽‍♂️Shakhar 👩🏽Thapaswi #Kishore 👨🏽‍🦱Anishkatuwal
 
  SPRINT 1
 
