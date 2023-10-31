@@ -13,32 +13,29 @@ The features team began concentrating on the fundamental characteristics needed 
 
 
 **Planned Events for implementation**</br>
-- As a player I should able to see where as advertisment poster redircts to website, while click on poster.</br>
-- As a user i can see the advertisment befor while hitting the enemys's .</br>
-- As a user i can see empty space after killing any of the enemies in the game allowing the player to move in the empty space. </br>
-- As a user i can use in-game healing kit for gaining health while playing. </br> 
-- As a user i can change the player character in a game.</br> 
+- As a player, After clicking on the commercial poster, I should be able to see the website that the poster sends me to.</br>
+- As a user,I can view the advertisement prior to striking the enemy.</br>
+- As a user, After defeating any of the opponents in the game, I can see empty area where the player can move. </br>
+- As a user,I can increase my health while playing by using the in-game healing kit. </br> 
+- As a user,In a game, I can alter the player's character. </br> 
 - As a player, I should be able to customize the avatar like color, size. </br>
-- As a player I should able to change characters in-game while playing.</br>
-- As a user, I can hear the music while playing game.</br>
-- As a player I should able to develop different weapon in game inventory.</br>
-- As a Player I can check the collision between player and enemy.</br>
+- As a player, I should able to change characters in-game while playing.</br>
+- As a user, I can see main menu to play or quit the game </br>
+- As a player, I should able to see different weapons in game inventory.</br>
+- As a Player, I can check the collision between player and enemy.</br>
 
 **Planned Events with detail tasks**
 
-- As a user, I want to have a health item for in-game healing.</br>
-- As a user, I want the ability to use a cheat code to instantly restore my character's energy.</br>
 - As a player, I can view the advertisement with a time limit, and then I can click the close symbol to end the poster..</br>
-- As a player, When I click on the advertisement poster, a website with further information should redirect to me.</br>
-- As a user, I can incorporating background music for various activities, such as pause, death, and victory.
-- As a player, I should able to see avatar selecting option.produced avatars and modified the player icon when a click was made on them.
-- As a user, 
+- As a user, After defeating any of the opponents in the game, I can see empty area where the player can move. </br>
+- As a user,In a game, I can alter the player's character. </br>
+- As a user, I can see main menu after launching the game. </br>
 
 **Feature Backlogs**
-- As a user i can add video advertisment while playing.
-- As a user i can use in-game healing kit for gaining health while playing. </br>
-- As a player, I should be able to customize the avatar like color, size. </br> </br>
-- As a user, I want to add more like pause or restart in menu. </br>
+- As a user, I can add video advertisment while playing. </br>
+- As a user, I can use in-game healing kit for gaining health while playing. </br>
+- As a player, I should be able to customize the avatar like color, size. </br> 
+- As a user, I can see more options in main menu like pause or restart in menu. </br>
 - As a user, I should able to see more different weapone player in battel.s </br>
 
 ### Individual Assigned Features
