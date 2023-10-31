@@ -140,6 +140,7 @@
     <Content Include="data\char2ic.png" />
     <Content Include="data\cloth.png" />
     <Content Include="data\control_menu_image.jpg" />
+    <Content Include="data\control_menu_image_old.jpg" />
     <Content Include="data\playeric.png" />
     <None Include="Resources\cloth.png" />
   </ItemGroup>
