@@ -7,8 +7,8 @@ Documentation can be accessed through https://docs.google.com/document/d/1F89YPA
 Sprint Planning spreadsheet https://docs.google.com/spreadsheets/d/117d0Sj1u5YuyEwIM8GMbnNU9_xOtx0oupGR9REwG4AQ/edit?usp=sharing
 
 
-### BYTEClUB TEAM
-:feelsgood: Dileep :goberserk: Kishore :godmode: Thapaswi :rage1:Shakhar :rage1:Anishkatuwal
+### BYTECLUB TEAM
+:feelsgood: Dileep :goberserk: Kishore :godmode: Thapaswi :rage1:Shakhar :rage1:Anish
 
 
 ## Sprint 1
