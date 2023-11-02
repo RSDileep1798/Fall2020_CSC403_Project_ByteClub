@@ -3,8 +3,8 @@ The ByteClub game development team has two primary goals for the player: one is 
 
 The features team began concentrating on the fundamental characteristics needed for interaction and increased the level of effort.
 
-Documentation can be accessed through https://docs.google.com/document/d/1F89YPAPN-4Rk1Kg6SJinSylLRZ1mWvAWA1JPFLXnouI/edit?usp=sharing
-Sprint Planning spreadsheet https://docs.google.com/spreadsheets/d/117d0Sj1u5YuyEwIM8GMbnNU9_xOtx0oupGR9REwG4AQ/edit?usp=sharing
+Documentation can be accessed through https://docs.google.com/document/d/1F89YPAPN-4Rk1Kg6SJinSylLRZ1mWvAWA1JPFLXnouI/edit?usp=sharing </br>
+Sprint Planning spreadsheet https://docs.google.com/spreadsheets/d/117d0Sj1u5YuyEwIM8GMbnNU9_xOtx0oupGR9REwG4AQ/edit?usp=sharing </br>
 
 
 ### BYTECLUB TEAM
