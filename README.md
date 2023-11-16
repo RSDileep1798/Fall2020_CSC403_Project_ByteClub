@@ -11,7 +11,7 @@ Sprint Planning spreadsheet https://docs.google.com/spreadsheets/d/117d0Sj1u5Yuy
 :feelsgood: Dileep :goberserk: Kishore :godmode: Thapaswi :rage1:Shakhar :rage1:Anish
 
 
-## Sprint 1
+## Sprint 1 & Sprint 2 
 <details><summary>Sprint 1 Documentation</summary>
 <p>
 
@@ -190,7 +190,7 @@ Continue for the next sprint.
 </details>
 
 
-##Sprint 2 
+## Sprint 2 
 <details><summary>Sprint 2 Documentation</summary>
 <p>
 
