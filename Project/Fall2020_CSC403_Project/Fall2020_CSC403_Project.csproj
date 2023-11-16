@@ -134,15 +134,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="control_menu_image.jpg" />
+    <Content Include="data\AD4.mp4" />
+    <Content Include="data\AD5.mp4" />
+    <Content Include="data\ADV1.mp4" />
+    <Content Include="data\ADV2.mp4" />
+    <Content Include="data\ADV3.mp4" />
     <Content Include="data\char1.png" />
     <Content Include="data\char1ic.png" />
     <Content Include="data\char2.png" />
     <Content Include="data\char2ic.png" />
     <Content Include="data\cloth.png" />
     <Content Include="data\control_menu_image.jpg" />
-    <Content Include="data\control_menu_image_old.jpg" />
     <Content Include="data\playeric.png" />
     <None Include="Resources\cloth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

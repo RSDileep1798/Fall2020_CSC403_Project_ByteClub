@@ -31,13 +31,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblEnemyHealthFull = new System.Windows.Forms.Label();
             this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.advertisingPanel = new System.Windows.Forms.Panel();
             this.AdClose = new System.Windows.Forms.TextBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.picBossBattle = new System.Windows.Forms.PictureBox();
             this.picEnemy = new System.Windows.Forms.PictureBox();
-            this.picPlayer= new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.picPlayer = new System.Windows.Forms.PictureBox();
             this.advertisingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -97,12 +99,18 @@
             this.tmrFinalBattle.Interval = 5600;
             this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // advertisingPanel
             // 
             this.advertisingPanel.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.advertisingPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("advertisingPanel.BackgroundImage")));
             this.advertisingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.advertisingPanel.Controls.Add(this.AdClose);
+            this.advertisingPanel.Controls.Add(this.axWindowsMediaPlayer1);
             this.advertisingPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.advertisingPanel.Enabled = false;
             this.advertisingPanel.Location = new System.Drawing.Point(52, 52);
@@ -115,7 +123,6 @@
             // AdClose
             // 
             this.AdClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.AdClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdClose.ForeColor = System.Drawing.Color.Red;
             this.AdClose.Location = new System.Drawing.Point(695, 0);
@@ -125,6 +132,17 @@
             this.AdClose.Text = "X";
             this.AdClose.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AdClose.Click += new System.EventHandler(this.AdClose_Click);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(720, 458);
+            this.axWindowsMediaPlayer1.TabIndex = 1;
+            this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
             // 
             // picBossBattle
             // 
@@ -161,11 +179,6 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +201,7 @@
             this.Text = "Fight!";
             this.advertisingPanel.ResumeLayout(false);
             this.advertisingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
@@ -209,5 +223,6 @@
         private System.Windows.Forms.Panel advertisingPanel;
         private System.Windows.Forms.TextBox AdClose;
         private System.Windows.Forms.Timer timer1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
