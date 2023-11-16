@@ -111,7 +111,6 @@ namespace Fall2020_CSC403_Project
         {
             // move player
             player.Move();
-
             // check collision with walls
             if (HitAWall(player))
             {
@@ -140,6 +139,11 @@ namespace Fall2020_CSC403_Project
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+        }
+
+        private void speed()
+        {
+            player.GO_INC = 9;
         }
 
         private void disableenemy(Enemy enemy)
@@ -279,12 +283,22 @@ namespace Fall2020_CSC403_Project
                     pause = true;
                     Control_menu();
                     break;
-
+                case Keys.S:
+                    speed();
+                    break;
+                case Keys.R:
+                    Reset_speed();
+                    break;
                 default:
                     player.ResetMoveSpeed();
                     break;
             }
 
+        }
+
+        private void Reset_speed()
+        {
+            player.GO_INC = 3;
         }
 
 
