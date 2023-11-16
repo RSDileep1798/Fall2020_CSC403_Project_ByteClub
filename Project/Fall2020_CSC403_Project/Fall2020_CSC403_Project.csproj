@@ -146,6 +146,10 @@
     <Folder Include="code\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\data\ADV1.mp4" />
+    <None Include="bin\Debug\data\ADV2.mp4" />
+    <None Include="bin\Debug\data\ADV3.mp4" />
+    <None Include="bin\Debug\data\myGameBackgroundScore.wav" />
     <Content Include="data\myGameBackgroundScore.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -4,10 +4,13 @@ using Fall2020_CSC403_Project.Properties;
 using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Media;
 using System.Windows.Forms;
 using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fall2020_CSC403_Project
 {
@@ -226,11 +229,10 @@ namespace Fall2020_CSC403_Project
         {
             axWindowsMediaPlayer1.uiMode = "none";
             timer1.Start();
-
             // Initialize arrays or lists containing the available videos, pictures, and URLs
-            string[] videos = { "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV1.mp4",
-                                "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV2.mp4",
-                                "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV3.mp4"};
+            string[] videos = { "data\\ADV1.mp4",
+                                "data\\ADV2.mp4",
+                                "data\\ADV3.mp4"};
             string[] pictures = { "AD1", "AD2", "AD3" };
             string[] urls = { "https://latechsports.com/sports/football", "https://www.chick-fil-a.com/", "https://www.adidas.com/us"};
             
