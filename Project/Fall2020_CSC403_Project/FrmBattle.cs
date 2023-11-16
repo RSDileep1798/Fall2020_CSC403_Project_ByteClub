@@ -53,6 +53,7 @@ namespace Fall2020_CSC403_Project {
             switch (characterbattle)
             {
                 case 1:
+
                     picPlayer.BackgroundImage = Properties.Resources.char1;
                     break;
                 case 2:

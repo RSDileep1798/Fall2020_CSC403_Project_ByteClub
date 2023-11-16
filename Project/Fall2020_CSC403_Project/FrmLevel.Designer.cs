@@ -29,7 +29,10 @@
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.flowLayPan = new System.Windows.Forms.FlowLayoutPanel();
+            this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.Scoreboard = new System.Windows.Forms.Label();
             this.my_game_control_menu = new System.Windows.Forms.PictureBox();
+            this.winlosspopup = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall8 = new System.Windows.Forms.PictureBox();
@@ -52,6 +55,8 @@
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.flowLayPan.SuspendLayout();
+            this.playerlayout.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.my_game_control_menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
@@ -74,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -114,6 +120,30 @@
             this.flowLayPan.Size = new System.Drawing.Size(123, 325);
             this.flowLayPan.TabIndex = 19;
             this.flowLayPan.Visible = false;
+            // 
+            // playerlayout
+            // 
+            this.playerlayout.AutoSize = true;
+            this.playerlayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.playerlayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.playerlayout.Location = new System.Drawing.Point(147, 567);
+            this.playerlayout.Name = "playerlayout";
+            this.playerlayout.Size = new System.Drawing.Size(118, 111);
+            this.playerlayout.TabIndex = 23;
+            // 
+            // winlosspopup
+            // 
+            this.winlosspopup.BackColor = System.Drawing.Color.Transparent;
+            //this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.won;
+            this.winlosspopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.winlosspopup.Enabled = false;
+            this.winlosspopup.Location = new System.Drawing.Point(503, 342);
+            this.winlosspopup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.winlosspopup.Name = "winlosspopup";
+            this.winlosspopup.Size = new System.Drawing.Size(595, 174);
+            this.winlosspopup.TabIndex = 20;
+            this.winlosspopup.TabStop = false;
+            this.winlosspopup.Visible = false;
             // 
             // my_game_control_menu
             // 
@@ -234,6 +264,17 @@
             this.picWall1.Size = new System.Drawing.Size(704, 103);
             this.picWall1.TabIndex = 13;
             this.picWall1.TabStop = false;
+            //
+            // Scoreboard
+            // 
+            this.Scoreboard.AutoSize = true;
+            this.Scoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoreboard.ForeColor = System.Drawing.Color.Orange;
+            this.Scoreboard.Location = new System.Drawing.Point(611, 1);
+            this.Scoreboard.Name = "Scoreboard";
+            this.Scoreboard.Size = new System.Drawing.Size(72, 29);
+            this.Scoreboard.TabIndex = 28;
+            this.Scoreboard.Text = "label";
             // 
             // picWall0
             // 
@@ -387,6 +428,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1764, 1050);
             this.Controls.Add(this.my_game_control_menu);
+            this.Controls.Add(this.Scoreboard);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -407,6 +449,7 @@
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.winlosspopup);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLevel";
@@ -416,6 +459,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.flowLayPan.ResumeLayout(false);
+            this.playerlayout.ResumeLayout(false);
+            this.playerlayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.my_game_control_menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
@@ -438,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,8 +516,12 @@
         private System.Windows.Forms.PictureBox playericon;
         private System.Windows.Forms.PictureBox wizardicon;
         private System.Windows.Forms.FlowLayoutPanel flowLayPan;
+        private System.Windows.Forms.PictureBox winlosspopup;
+        private System.Windows.Forms.FlowLayoutPanel playerlayout;
+
         //main menu
         private System.Windows.Forms.PictureBox my_game_control_menu;
+        private System.Windows.Forms.Label Scoreboard;
 
     }
 }

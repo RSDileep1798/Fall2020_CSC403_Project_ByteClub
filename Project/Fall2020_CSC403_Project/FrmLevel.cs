@@ -2,6 +2,8 @@
 using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -12,6 +14,10 @@ namespace Fall2020_CSC403_Project {
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
+        private int scores;
+        private bool playerflag = false;
+
+
 
         private int charchoice = 0;
         private DateTime timeBegin;
@@ -25,9 +31,10 @@ namespace Fall2020_CSC403_Project {
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
+            //player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
 
-      player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-      bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
+            bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
 
@@ -90,9 +97,12 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid) && bossKoolaid.Health > 0) {
         Fight(bossKoolaid);
       }
+            Scoreboard.Text = "SCORE ==>" + scores;
+            Scoreboard.ForeColor = Color.Green; // You can replace Color.White with your desired color
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
         private void disableenemy(Enemy enemy)
@@ -115,6 +125,7 @@ namespace Fall2020_CSC403_Project {
 
 
         }
+
 
         private bool HitAWall(Character c) {
       bool hitAWall = false;
@@ -147,22 +158,27 @@ namespace Fall2020_CSC403_Project {
                 frmBattle.SetupForBossBattle();
             }
         }
+
         private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
         case Keys.Left:
-          player.GoLeft();
+                    scores += 1;
+                    player.GoLeft();
           break;
 
         case Keys.Right:
-          player.GoRight();
+                    scores += 1;
+                    player.GoRight();
           break;
 
         case Keys.Up:
-          player.GoUp();
+                    scores += 1;
+                    player.GoUp();
           break;
 
         case Keys.Down:
-          player.GoDown();
+                    scores += 1;
+                    player.GoDown();
           break;
 
                 //main menu
@@ -175,7 +191,10 @@ namespace Fall2020_CSC403_Project {
           player.ResetMoveSpeed();
           break;
       }
+
     }
+        
+
         //main menu
         private void Control_menu()
         {
@@ -245,8 +264,12 @@ namespace Fall2020_CSC403_Project {
             }
         }
 
+
+
         private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-  }
+
+    }
 }
+

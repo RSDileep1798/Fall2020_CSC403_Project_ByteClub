@@ -35,7 +35,7 @@
             this.AdClose = new System.Windows.Forms.TextBox();
             this.picBossBattle = new System.Windows.Forms.PictureBox();
             this.picEnemy = new System.Windows.Forms.PictureBox();
-            this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.picPlayer= new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.advertisingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
