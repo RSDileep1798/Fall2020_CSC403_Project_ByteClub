@@ -152,6 +152,7 @@
     <None Include="bin\Debug\data\myGameBackgroundScore.wav" />
     <None Include="data\foot-plaster.png" />
     <None Include="data\medical-pack.png" />
+    <Content Include="data\control_menu_image.jpg" />
     <Content Include="data\myGameBackgroundScore.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -186,7 +187,6 @@
     <Content Include="data\char2.png" />
     <Content Include="data\char2ic.png" />
     <Content Include="data\cloth.png" />
-    <Content Include="data\control_menu_image.jpg" />
     <Content Include="data\playeric.png" />
     <None Include="Resources\cloth.png" />
   </ItemGroup>
