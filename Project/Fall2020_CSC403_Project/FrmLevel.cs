@@ -17,6 +17,8 @@ namespace Fall2020_CSC403_Project
         private Enemy bossKoolaid;
         private Enemy enemyCheeto;
         private Character[] walls;
+        private Reheal minreheal;
+        private Reheal maxreheal;
         private int scores;
         private bool playerflag = false;
         List<int> generatedIndexes = new List<int>();
@@ -39,7 +41,8 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 13;
             //player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-
+            minreheal = new Reheal(CreatePosition(minHeal), CreateCollider(minHeal, PADDING)) ;
+            maxreheal = new Reheal(CreatePosition(fullHeal), CreateCollider(fullHeal, PADDING));
             player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
             bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
             enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
@@ -116,6 +119,14 @@ namespace Fall2020_CSC403_Project
             {
                 player.MoveBack();
             }
+            if (HitAMHeal(player, minreheal))
+            {
+                minHealer();
+            }
+            if (HitAMaxHeal(player, maxreheal))
+            {
+                maxheal();
+            }
             if (enemyPoisonPacket.Health <= 0) { disableenemy(enemyPoisonPacket); }
             if (enemyCheeto.Health <= 0) { disableenemy(enemyCheeto); }
             if (bossKoolaid.Health <= 0) { disableenemy(bossKoolaid); }
@@ -139,6 +150,20 @@ namespace Fall2020_CSC403_Project
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+        }
+
+        private void maxheal()
+        {
+            player.Health = 20;
+            fullHeal.Enabled = false;
+            fullHeal.Visible = false;
+        }
+
+        private void minHealer()
+        {
+            player.Health = 15;
+            minHeal.Visible= false;
+            minHeal.Enabled= false;
         }
 
         private void speed()
@@ -180,6 +205,14 @@ namespace Fall2020_CSC403_Project
                 }
             }
             return hitAWall;
+        }
+        private bool HitAMHeal(Character c,Character other)
+        {
+            return c.Collider.Intersects(other.Collider);
+        }
+        private bool HitAMaxHeal(Character c, Character other)
+        {
+            return c.Collider.Intersects(other.Collider);
         }
 
         private bool HitAChar(Character you, Character other)
