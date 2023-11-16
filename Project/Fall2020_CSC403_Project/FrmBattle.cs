@@ -17,6 +17,7 @@ namespace Fall2020_CSC403_Project
         private Enemy enemy;
         private Player player;
         private static int characterbattle;
+        private static int adv;
         private List<string> texts = new List<string> { "5", "4", "3", "2", "X" };
         private int currentIndex = 0;
         private bool ad3start = false;
@@ -24,6 +25,7 @@ namespace Fall2020_CSC403_Project
         private WaveOutEvent waveOut;
         private AudioFileReader audioFile;
         string urlToOpen = "";
+       
         private FrmBattle()
         {
             InitializeComponent();
@@ -98,9 +100,10 @@ namespace Fall2020_CSC403_Project
 
         }
 
-        public static FrmBattle GetInstance(Enemy enemy, int charchoice)
+        public static FrmBattle GetInstance(Enemy enemy, int charchoice, int advetiseId)
         {
             characterbattle = charchoice;
+            adv = advetiseId;
             if (instance == null)
             {
                 instance = new FrmBattle();
@@ -179,36 +182,6 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        /*        private void AdVisible(string color)
-                {//Update the URL path with the videos you are looking to and put those in the same data folder which is being used for pictures previosly.
-                    //Assign unique url for all three stages make sure those are 30 sec long
-                    //Try doing Random picup handling differnt video/pictures/url for attacks on given session play.
-
-                    axWindowsMediaPlayer1.uiMode = "none";
-                    timer1.Start();
-                    if (color == "Green")
-                    {
-                        axWindowsMediaPlayer1.URL = "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV1.mp4";
-                        urlToOpen = "https://latechsports.com/sports/football"; // Replace with your desired URL
-                        advertisingPanel.BackgroundImage = Resources.AD1;
-                    }
-                    else if (color == "Orange")
-                    {
-                        axWindowsMediaPlayer1.URL = "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV2.mp4";
-                        urlToOpen = "https://www.chick-fil-a.com/"; // Replace with your desired URL
-                        advertisingPanel.BackgroundImage = Resources.AD2;
-                    }
-                    else if (color == "Red")
-                    {
-                        axWindowsMediaPlayer1.URL = "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV3.mp4";
-                        urlToOpen = "https://www.adidas.com/us"; // Replace with your desired URL
-                        advertisingPanel.BackgroundImage = Resources.AD3;
-                    }
-
-                    advertisingPanel.Visible = true;
-                    advertisingPanel.Enabled = true;
-                }
-        */
         private void AdClose_Click(object sender, EventArgs e)
         {
             if (AdClose.Text == "X")
@@ -246,6 +219,7 @@ namespace Fall2020_CSC403_Project
 
             }
         }
+
         private void AdVisible(string color)
         {
             axWindowsMediaPlayer1.uiMode = "none";
@@ -255,53 +229,20 @@ namespace Fall2020_CSC403_Project
             string[] videos = { "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV1.mp4",
                                 "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV2.mp4",
                                 "C:\\Users\\user_\\OneDrive\\Documents\\Dileep.SE\\Fall2020_CSC403_Project_ByteClub\\Project\\Fall2020_CSC403_Project\\data\\ADV3.mp4"};
-            string[] pictures = { "Resources.AD1", "Resources.AD2", "Resources.AD3" };
-            string[] urls = { "https://latechsports.com/sports/football", "https://www.chick-fil-a.com/", "https://www.adidas.com/us", "https://www.apple.com/" };
+            string[] pictures = { "AD1", "AD2", "AD3" };
+            string[] urls = { "https://latechsports.com/sports/football", "https://www.chick-fil-a.com/", "https://www.adidas.com/us"};
+            
+            string selectedVideo = videos[adv];
+            string selectedPicture = pictures[adv];
+            string selectedUrl = urls[adv];
 
-            /*    // Generate random indexes for selecting a video, picture, and URL
-                Random random = new Random();
-                int videoIndex = random.Next(videos.Length);
-                int pictureIndex = random.Next(pictures.Length);
-                int urlIndex = random.Next(urls.Length);
-
-                // Assign the selected video, picture, and URL
-                axWindowsMediaPlayer1.URL = videos[videoIndex];
-                advertisingPanel.BackgroundImage = Resources.ResourceManager.GetObject(pictures[pictureIndex]) as Image;
-                urlToOpen = urls[urlIndex];
-
-                advertisingPanel.Visible = true;
-                advertisingPanel.Enabled = true;
-            }*/
-            // Initialize a list to store generated indexes
-            List<int> generatedIndexes = new List<int>();
-
-            // Use a loop to generate random indexes without repetition
-            for (int i = 0; i < 3; i++) // Assuming you want to generate 3 random indexes
-            {
-                // Keep generating until a unique index is obtained
-                while (true)
-                {
-                    Random random = new Random();
-                    int index = random.Next(0, 3); // Assuming the length of your arrays is always 3
-
-                    if (!generatedIndexes.Contains(index))
-                    {
-                        generatedIndexes.Add(index);
-                        // Use the generated index as needed in your code
-                        string selectedVideo = videos[index];
-                        string selectedPicture = pictures[index];
-                        string selectedUrl = urls[index];
-
-                        axWindowsMediaPlayer1.URL = selectedVideo;
-                        advertisingPanel.BackgroundImage = Resources.ResourceManager.GetObject(selectedPicture) as Image;
-                        urlToOpen = selectedUrl;
-
-                        advertisingPanel.Visible = true;
-                        advertisingPanel.Enabled = true;
-                        break;
-                    }
-                }
-            }
+            axWindowsMediaPlayer1.URL = selectedVideo;
+            advertisingPanel.BackgroundImage = Resources.ResourceManager.GetObject(selectedPicture) as Image;
+            urlToOpen = selectedUrl;
+            advertisingPanel.Visible = true;
+            advertisingPanel.Enabled = true;
+            
+           
         }
     }
 }
