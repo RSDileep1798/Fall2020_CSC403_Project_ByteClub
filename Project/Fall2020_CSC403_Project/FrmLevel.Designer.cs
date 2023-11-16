@@ -29,17 +29,17 @@
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.flowLayPan = new System.Windows.Forms.FlowLayoutPanel();
+            this.wizardicon = new System.Windows.Forms.PictureBox();
+            this.playericon = new System.Windows.Forms.PictureBox();
+            this.ninjaicon = new System.Windows.Forms.PictureBox();
             this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
             this.Scoreboard = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.minHeal = new System.Windows.Forms.PictureBox();
             this.my_game_control_menu = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall8 = new System.Windows.Forms.PictureBox();
             this.picWall7 = new System.Windows.Forms.PictureBox();
-            this.wizardicon = new System.Windows.Forms.PictureBox();
-            this.playericon = new System.Windows.Forms.PictureBox();
-            this.ninjaicon = new System.Windows.Forms.PictureBox();
             this.charactericon = new System.Windows.Forms.PictureBox();
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall0 = new System.Windows.Forms.PictureBox();
@@ -55,16 +55,18 @@
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.winlosspopup = new System.Windows.Forms.PictureBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.fullHeal = new System.Windows.Forms.PictureBox();
             this.flowLayPan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wizardicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playericon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ninjaicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minHeal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_game_control_menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wizardicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playericon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ninjaicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactericon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHeal)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -115,11 +118,50 @@
             this.flowLayPan.Enabled = false;
             this.flowLayPan.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayPan.Location = new System.Drawing.Point(2, 65);
-            this.flowLayPan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayPan.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayPan.Name = "flowLayPan";
             this.flowLayPan.Size = new System.Drawing.Size(82, 211);
             this.flowLayPan.TabIndex = 19;
             this.flowLayPan.Visible = false;
+            // 
+            // wizardicon
+            // 
+            this.wizardicon.BackColor = System.Drawing.Color.Transparent;
+            this.wizardicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char1ic;
+            this.wizardicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.wizardicon.Location = new System.Drawing.Point(2, 2);
+            this.wizardicon.Margin = new System.Windows.Forms.Padding(2);
+            this.wizardicon.Name = "wizardicon";
+            this.wizardicon.Size = new System.Drawing.Size(73, 68);
+            this.wizardicon.TabIndex = 4;
+            this.wizardicon.TabStop = false;
+            this.wizardicon.Click += new System.EventHandler(this.wizard_Click);
+            // 
+            // playericon
+            // 
+            this.playericon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.playeric;
+            this.playericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playericon.Location = new System.Drawing.Point(2, 74);
+            this.playericon.Margin = new System.Windows.Forms.Padding(2);
+            this.playericon.Name = "playericon";
+            this.playericon.Size = new System.Drawing.Size(73, 66);
+            this.playericon.TabIndex = 5;
+            this.playericon.TabStop = false;
+            this.playericon.Click += new System.EventHandler(this.player_Click);
+            // 
+            // ninjaicon
+            // 
+            this.ninjaicon.BackColor = System.Drawing.Color.Transparent;
+            this.ninjaicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char2ic;
+            this.ninjaicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ninjaicon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ninjaicon.Location = new System.Drawing.Point(2, 144);
+            this.ninjaicon.Margin = new System.Windows.Forms.Padding(2);
+            this.ninjaicon.Name = "ninjaicon";
+            this.ninjaicon.Size = new System.Drawing.Size(73, 53);
+            this.ninjaicon.TabIndex = 0;
+            this.ninjaicon.TabStop = false;
+            this.ninjaicon.Click += new System.EventHandler(this.ninja_Click);
             // 
             // playerlayout
             // 
@@ -143,13 +185,15 @@
             this.Scoreboard.TabIndex = 28;
             this.Scoreboard.Text = "label";
             // 
-            // pictureBox1
+            // minHeal
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(505, 98);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 71);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.minHeal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minHeal.BackgroundImage")));
+            this.minHeal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.minHeal.Location = new System.Drawing.Point(521, 98);
+            this.minHeal.Name = "minHeal";
+            this.minHeal.Size = new System.Drawing.Size(80, 71);
+            this.minHeal.TabIndex = 29;
+            this.minHeal.TabStop = false;
             // 
             // my_game_control_menu
             // 
@@ -205,45 +249,6 @@
             this.picWall7.Size = new System.Drawing.Size(380, 67);
             this.picWall7.TabIndex = 14;
             this.picWall7.TabStop = false;
-            // 
-            // wizardicon
-            // 
-            this.wizardicon.BackColor = System.Drawing.Color.Transparent;
-            this.wizardicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char1ic;
-            this.wizardicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.wizardicon.Location = new System.Drawing.Point(2, 2);
-            this.wizardicon.Margin = new System.Windows.Forms.Padding(2);
-            this.wizardicon.Name = "wizardicon";
-            this.wizardicon.Size = new System.Drawing.Size(73, 68);
-            this.wizardicon.TabIndex = 4;
-            this.wizardicon.TabStop = false;
-            this.wizardicon.Click += new System.EventHandler(this.wizard_Click);
-            // 
-            // playericon
-            // 
-            this.playericon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.playeric;
-            this.playericon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.playericon.Location = new System.Drawing.Point(2, 74);
-            this.playericon.Margin = new System.Windows.Forms.Padding(2);
-            this.playericon.Name = "playericon";
-            this.playericon.Size = new System.Drawing.Size(73, 66);
-            this.playericon.TabIndex = 5;
-            this.playericon.TabStop = false;
-            this.playericon.Click += new System.EventHandler(this.player_Click);
-            // 
-            // ninjaicon
-            // 
-            this.ninjaicon.BackColor = System.Drawing.Color.Transparent;
-            this.ninjaicon.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.char2ic;
-            this.ninjaicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ninjaicon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ninjaicon.Location = new System.Drawing.Point(2, 144);
-            this.ninjaicon.Margin = new System.Windows.Forms.Padding(2);
-            this.ninjaicon.Name = "ninjaicon";
-            this.ninjaicon.Size = new System.Drawing.Size(73, 53);
-            this.ninjaicon.TabIndex = 0;
-            this.ninjaicon.TabStop = false;
-            this.ninjaicon.Click += new System.EventHandler(this.ninja_Click);
             // 
             // charactericon
             // 
@@ -414,6 +419,16 @@
             this.winlosspopup.TabStop = false;
             this.winlosspopup.Visible = false;
             // 
+            // fullHeal
+            // 
+            this.fullHeal.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.medical_pack;
+            this.fullHeal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fullHeal.Location = new System.Drawing.Point(987, 574);
+            this.fullHeal.Name = "fullHeal";
+            this.fullHeal.Size = new System.Drawing.Size(71, 50);
+            this.fullHeal.TabIndex = 30;
+            this.fullHeal.TabStop = false;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,7 +436,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 682);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.fullHeal);
+            this.Controls.Add(this.minHeal);
             this.Controls.Add(this.my_game_control_menu);
             this.Controls.Add(this.Scoreboard);
             this.Controls.Add(this.picWall11);
@@ -453,15 +469,15 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.flowLayPan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wizardicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playericon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ninjaicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minHeal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.my_game_control_menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wizardicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playericon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ninjaicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactericon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
@@ -477,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullHeal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,7 +532,9 @@
         //main menu
         private System.Windows.Forms.PictureBox my_game_control_menu;
         private System.Windows.Forms.Label Scoreboard;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox minHeal;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.PictureBox fullHeal;
     }
 }
 
