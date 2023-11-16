@@ -23,10 +23,13 @@ namespace Fall2020_CSC403_Project {
         private DateTime timeBegin;
     private FrmBattle frmBattle;
         private bool pause = true;
-
+        //backgroundScore
+        private SoundPlayer gameBackgroundScore;
         public FrmLevel() {
       InitializeComponent();
-    }
+            //Background Score
+            gameBackgroundScore = new SoundPlayer("data/myGameBackgroundScore.wav");
+        }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
@@ -46,7 +49,10 @@ namespace Fall2020_CSC403_Project {
       enemyPoisonPacket.Color = Color.Green;
       enemyCheeto.Color = Color.Orange;
 
-      walls = new Character[NUM_WALLS];
+            //gameBackgroundScore
+            PlayBlackgroundScore();
+
+            walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
         PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
         walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
@@ -56,7 +62,23 @@ namespace Fall2020_CSC403_Project {
       timeBegin = DateTime.Now;
     }
 
-    private Vector2 CreatePosition(PictureBox pic) {
+        //gameBackgroundScore
+        public void PlayBlackgroundScore()
+        {
+            //gameBackgroundScore.PlayLooping();
+            try
+            {
+                // Play the sound file in a loop
+                gameBackgroundScore.PlayLooping();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+
+        private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
     }
 
