@@ -150,6 +150,8 @@
     <None Include="bin\Debug\data\ADV2.mp4" />
     <None Include="bin\Debug\data\ADV3.mp4" />
     <None Include="bin\Debug\data\myGameBackgroundScore.wav" />
+    <None Include="data\foot-plaster.png" />
+    <None Include="data\medical-pack.png" />
     <Content Include="data\myGameBackgroundScore.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
