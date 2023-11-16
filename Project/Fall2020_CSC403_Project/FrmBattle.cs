@@ -191,6 +191,8 @@ namespace Fall2020_CSC403_Project
                 advertisingPanel.Enabled = false;
                 ad3start = false;
                 timer1.Stop();
+                // Resume the background music when closing the advertisement
+                ResumeBackgroundScore();
             }
         }
 
@@ -236,6 +238,9 @@ namespace Fall2020_CSC403_Project
             string selectedPicture = pictures[adv];
             string selectedUrl = urls[adv];
 
+            // Pause the background music
+            PauseBackgroundScore();
+
             axWindowsMediaPlayer1.URL = selectedVideo;
             advertisingPanel.BackgroundImage = Resources.ResourceManager.GetObject(selectedPicture) as Image;
             urlToOpen = selectedUrl;
@@ -243,6 +248,32 @@ namespace Fall2020_CSC403_Project
             advertisingPanel.Enabled = true;
             
            
+        }
+        // Pause background music
+        private void PauseBackgroundScore()
+        {
+            try
+            {
+                waveOut.Pause();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+        // Resume background music
+        private void ResumeBackgroundScore()
+        {
+            try
+            {
+                waveOut.Play();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle other exceptions if needed
+            }
         }
     }
 }

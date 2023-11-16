@@ -185,6 +185,9 @@ namespace Fall2020_CSC403_Project
 
         private void Fight(Enemy enemy)
         {
+            // Pause the background music
+            PauseBackgroundScore();
+
             // Keep generating until a unique index for advertising
             while (true)
             {
@@ -201,17 +204,49 @@ namespace Fall2020_CSC403_Project
                 }
             }
 
+            // Pause the background music
+           // PauseBackgroundScore();
+
             player.ResetMoveSpeed();
             player.MoveBack();
             frmBattle = FrmBattle.GetInstance(enemy, charchoice, advertiseId);
             if (frmBattle != null)
             {
+                frmBattle.FormClosed += (s, e) => ResumeBackgroundScore(); // Resume music when the battle form is closed
                 frmBattle.Show();
             }
 
             if (enemy == bossKoolaid)
             {
                 frmBattle.SetupForBossBattle();
+            }
+        }
+
+        // Pause background music
+        private void PauseBackgroundScore()
+        {
+            try
+            {
+                gameBackgroundScore.Stop();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle other exceptions if needed
+            }
+        }
+
+        // Resume background music
+        private void ResumeBackgroundScore()
+        {
+            try
+            {
+                gameBackgroundScore.PlayLooping();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // Handle other exceptions if needed
             }
         }
 
