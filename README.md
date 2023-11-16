@@ -67,8 +67,6 @@ Sprint Planning spreadsheet https://docs.google.com/spreadsheets/d/117d0Sj1u5Yuy
 <details><summary>Sprint1 Summary</summary>
 <p>
 
-
-
  ## Individual Developed feature summary
 
 <details><summary>As a player, I want to able to dispaly advertisment in my game.</summary>
@@ -193,13 +191,13 @@ Continue for the next sprint.
 
 
 ##Sprint 2 
-<details><summary>**Sprint 2** Documentation</summary>
+<details><summary>Sprint 2 Documentation</summary>
 <p>
 
 
 **Planned Events for implementation**</br>
-- As a player, whie attacking the enemy, I should be able to see the comercial Advertisment pop windonw.</br>
-- As a user,I can view the advertisement prior to striking the enemy.</br>
+- As a player, whie attacking the enemy, I should be able to see the comercial Advertisment pop windonw. </br>
+- As a user,I can view the advertisement prior to striking the enemy. </br>
 - As a user, I installed the packages needed for backgroundScore. </br>
 
 
@@ -232,9 +230,8 @@ Continue for the next sprint.
 
 - As a player, I want to be able to utilize a variety of weapons. </br>
 
-<details><summary>Sprint1 Summary</summary>
+<details><summary>Sprint2 Summary</summary>
 <p>
-
 
 
  ## Individual Developed feature summary
